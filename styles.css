@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background for elegance */
+    color: #e0e0e0; /* Light text for contrast */
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Center the container for larger screens */
+    padding: 20px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #f39c12;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.birthday-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e67e22;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
+}
+
+/* Large image container */
+.big-image-container {
+    background-color: #2c3e50;
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+/* Grid for dynamic image containers */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    background-color: #40e0d0;
+    border: 2px dashed #f39c12;
+    border-radius: 10px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(255, 211, 0, 0.5);
+}
+
+/* Text animations */
+.poem, p, .signature {
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.poem p, p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.signature {
+    font-style: italic;
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #f39c12;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #2c3e50;
+    color: #f39c12;
+    padding: 10px 0;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .birthday-message {
+        font-size: 1.4em;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+
+    .image-container {
+        padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+
+    .poem p, p {
+        font-size: 1em;
+    }
+
+    .signature {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        text-align: right; /* Align page content to the right */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+    
+    .birthday-message {
+        font-size: 1.3em;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-container {
+        padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+
+    .poem p, p {
+        font-size: 0.9em;
+    }
+
+    .signature {
+        font-size: 0.9em;
+    }
+}
